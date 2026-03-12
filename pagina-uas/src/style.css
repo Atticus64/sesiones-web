@@ -1,0 +1,629 @@
+:root {
+  --uas-blue: #1a3a5c;
+  --blue-feo: rgb(152, 237, 25);
+  --uas-red: #c41230;
+  --dark-text: #1a1a1a;
+  --light-text: #ffffff;
+  --bg-light: #f5f5f5;
+  --bg-white: #ffffff;
+  --border-color: #ddd;
+  --link-color: #1a3a5c;
+  --link-hover: #c41230;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--dark-text);
+  background-color: var(--bg-light);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+.header {
+  background-color: var(--uas-blue);
+  color: var(--light-text);
+  padding: 1.5rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.header-text {
+  flex: 1;
+}
+
+.header-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.header-subtitle {
+  font-size: 1.1rem;
+  opacity: 0.95;
+}
+
+.header-logos {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.header-logo {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+.header-carreras {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 1.5rem;
+}
+
+.carreras-list {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.carreras-list li {
+  font-size: 0.9rem;
+  padding: 0.25rem 0.75rem;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+}
+
+.pnpc-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #ffd700 0%, #ffb700 100%);
+  color: #1a1a1a;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.4);
+}
+
+.pnpc-icon {
+  font-size: 1rem;
+}
+
+.menu-checkbox {
+  display: none;
+}
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 100;
+  width: 30px;
+  height: 30px;
+}
+
+.hamburger {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: var(--light-text);
+  position: relative;
+  transition: background 0.3s;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 3px;
+  background: var(--light-text);
+  left: 0;
+  transition: transform 0.3s;
+}
+
+.hamburger::before {
+  top: -8px;
+}
+
+.hamburger::after {
+  top: 8px;
+}
+
+.navbar {
+  display: block;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  color: var(--light-text);
+  font-weight: 500;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: #e0e0e0;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--uas-red);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.hero {
+  background: linear-gradient(135deg, var(--uas-blue) 0%, #2a5a8c 100%);
+  color: var(--light-text);
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  opacity: 0.9;
+}
+
+.main-layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.section-title {
+  color: var(--uas-blue);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid var(--uas-red);
+}
+
+.examenes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.examen-card {
+  background: var(--bg-white);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.examen-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.examen-card h3 {
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+  color: var(--dark-text);
+}
+
+.examen-link {
+  display: block;
+}
+
+.examen-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 0 auto;
+}
+
+.examen-nota {
+  text-align: center;
+  font-style: italic;
+  color: #666;
+  margin-top: 1rem;
+}
+
+.tutorias-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.tutoria-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.clase-espejo-text {
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+.clase-espejo-img {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 8px;
+  margin: 1rem 0;
+  display: block;
+}
+
+.clase-espejo-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+}
+
+.clase-espejo-img-small {
+  max-width: 45%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.orgullo-img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.orgullo-text {
+  margin-bottom: 0.5rem;
+}
+
+.orgullo-felicidad {
+  color: var(--uas-red);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.aviso-img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sidebar-nav {
+  background: var(--bg-white);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-section {
+  margin-bottom: 1.5rem;
+}
+
+.sidebar-section:last-child {
+  margin-bottom: 0;
+}
+
+.sidebar-title {
+  color: var(--uas-blue);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.sidebar-list {
+  list-style: none;
+}
+
+.sidebar-list li {
+  margin-bottom: 0.25rem;
+}
+
+.sidebar-list a {
+  color: var(--link-color);
+  font-size: 0.9rem;
+  display: block;
+  padding: 0.25rem 0;
+}
+
+.sidebar-list a:hover {
+  color: var(--link-hover);
+  padding-left: 4px;
+}
+
+.badge {
+  background: var(--uas-red);
+  color: var(--light-text);
+  font-size: 0.7rem;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  margin-left: 0.25rem;
+}
+
+.calendario {
+  background: var(--bg-white);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.calendario-img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+}
+
+.footer {
+  background: var(--uas-blue);
+  color: var(--light-text);
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.footer-text {
+  margin-bottom: 0.5rem;
+}
+
+.footer-address,
+.footer-contact {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+@media (max-width: 992px) {
+  .header-main {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header-logos {
+    gap: 2rem;
+  }
+
+  .header-logo {
+    height: 50px;
+  }
+
+  .header-carreras {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .carreras-list {
+    justify-content: center;
+  }
+
+  .main-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    order: -1;
+  }
+
+  .sidebar-nav {
+    display: none;
+  }
+
+  .calendario {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .header {
+    position: relative;
+  }
+
+  .navbar {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--uas-blue);
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .menu-checkbox:checked ~ .navbar {
+    display: block;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+
+  .header-title {
+    font-size: 1.4rem;
+  }
+
+  .header-subtitle {
+    font-size: 1rem;
+  }
+
+  .header-logos {
+    gap: 1.5rem;
+  }
+
+  .header-logo {
+    height: 40px;
+  }
+
+  .carreras-list {
+    gap: 0.75rem;
+  }
+
+  .carreras-list li {
+    font-size: 0.8rem;
+  }
+
+  .pnpc-badge {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.75rem;
+  }
+
+  .hero-title {
+    font-size: 1.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .examenes-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+
+  .examen-card h3 {
+    font-size: 0.8rem;
+  }
+
+  .examen-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .section-title {
+    font-size: 1.25rem;
+  }
+
+  .clase-espejo-img-small {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-title {
+    font-size: 1.2rem;
+  }
+
+  .header-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .header-logos {
+    gap: 1rem;
+  }
+
+  .header-logo {
+    height: 35px;
+  }
+
+  .carreras-list {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .carreras-list li {
+    font-size: 0.75rem;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .hero {
+    padding: 2rem 0;
+  }
+
+  .hero-title {
+    font-size: 1.25rem;
+  }
+
+  .examenes-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .tutorias-images {
+    grid-template-columns: 1fr;
+  }
+}
